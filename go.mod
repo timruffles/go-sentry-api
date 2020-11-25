@@ -1,4 +1,4 @@
-module github.com/atlassian/go-sentry-api
+module github.com/timruffles/go-sentry-api.v1
 
 go 1.13
 
