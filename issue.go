@@ -104,7 +104,8 @@ type Issue struct {
 	ShortID             *string            `json:"shortId,omitempty"`
 	Stats               *IssueStats        `json:"stats,omitempty"`
 	Status              *Status            `json:"status,omitempty"`
-	StatusDetails       *map[string]string `json:"statusDetails,omitempty"`
+	// TODO - we don't use this currently, and its unmarshaling is broken (and breaks issue loading)
+	// StatusDetails       *map[string]string `json:"statusDetails,omitempty"`
 	SubscriptionDetails *map[string]string `json:"subscriptionDetails,omitempty"`
 	Tags                *[]IssueTag        `json:"tags,omitempty"`
 	Title               *string            `json:"title,omitempty"`
