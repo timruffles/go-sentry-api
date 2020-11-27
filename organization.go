@@ -44,6 +44,18 @@ func (c *Client) GetOrganizations() ([]Organization, *Link, error) {
 	return orgs, link, err
 }
 
+type OrganizationUser struct {
+	User     InternalUser `json:"user"`
+	Projects []string     `json:"projects"`
+}
+
+// GetOrganizations will return back every organization in the sentry instance
+func (c *Client) GetOrganizationUsers(orgSlug string) ([]OrganizationUser, *Link, error) {
+	users := make([]OrganizationUser, 0)
+	link, err := c.doWithPagination("GET", fmt.Sprintf("%s/%s/users", OrgEndpointName, orgSlug), &users, nil)
+	return users, link, err
+}
+
 // CreateOrganization creates a organization with a name
 func (c *Client) CreateOrganization(orgname string) (Organization, error) {
 	var org Organization
