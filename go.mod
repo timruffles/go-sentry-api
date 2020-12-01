@@ -1,4 +1,4 @@
-module github.com/timruffles/go-sentry-api.v1
+module github.com/timruffles/go-sentry-api
 
 go 1.13
 
